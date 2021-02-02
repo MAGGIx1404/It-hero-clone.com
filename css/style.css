@@ -1,0 +1,1872 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+}
+
+a,p,h1,h2,h3,h4,h5,h6{
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.container{
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+.container-2{
+    max-width: 1360px;
+    margin: 0 auto;
+}
+
+/* start */
+
+
+ #menuToggle
+ {
+   display: block;
+   position: relative;
+   top: 50px;
+   left: 50px;
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
+   display: none;
+ }
+ 
+ #menuToggle a
+ {
+   text-decoration: none;
+   color: #232323;
+   
+   transition: color 0.3s ease;
+ }
+ 
+ #menuToggle a:hover
+ {
+   color: tomato;
+ }
+ 
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; /* and place it over the hamburger */
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ /*
+  * Just a quick hamburger
+  */
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #cdcdcd;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #232323;
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ /*
+  * Ohyeah and the last one should go the other direction
+  */
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+ #menu a img{
+     width: 10rem;
+     height: auto;
+ }
+
+ #menu .hero{
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+
+ /*
+  * Make this absolute positioned
+  * at the top left of the screen
+  */
+ #menu
+ {
+   position: absolute;
+   width: 300px;
+   height: 750px;
+   margin: -100px 0 0 -50px;
+   padding: 50px;
+   padding-top: 80px;
+   
+   background-color: #5a3970;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(-100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li
+ {
+   padding: 10px 0;
+   font-size: 22px;
+   color: white;
+   font-weight: 600;
+   transition: .5s ease;
+ }
+
+ #menu li:hover{
+     color: #c43b00;
+ }
+ 
+ /*
+  * And let's slide it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: none;
+ }
+
+
+header{
+    height: 110vh;
+    background: url(../images/home-intro-background.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+header nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 1rem 0;
+}
+
+header nav .top-logo{
+    width: 12rem;
+    height: auto;
+}
+
+header nav .top-logo img{
+    width: 100%;
+    height: auto;
+}
+
+header nav .top-btn{
+    width: 50rem;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header nav .top-btn a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+header nav .top-btn .active{
+    color: #86599d;
+}
+
+header nav .top-btn .noactive{
+    transition: .5s ease;
+}   
+
+header nav .top-btn .noactive:hover{
+    color: #86599d;
+}
+
+header nav .top-btn .login{
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    background-color: #ea5211;
+    transition: .5s ease;
+}
+
+header nav .top-btn .login:hover{
+    background-color: #86599d;
+    color: white;
+}
+
+header main{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 5rem !important;
+}
+
+header main .left-site{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 60%;
+}
+
+header main .left-site h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #c83e04;
+}
+
+header main .left-site h1{
+    font-size: 4rem;
+    font-weight: 600;
+    color: white;
+    margin-top: 1rem;
+}
+
+header main .left-site p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    width: 60%;
+    margin-top: 1rem;
+    line-height: 2rem;
+}
+
+header main .left-site .google{
+    margin-top: 1rem;
+}
+
+header main .left-site .robot{
+    margin-top: 6rem;
+    position: relative;
+    left: 21rem;
+}
+
+header main .left-site .small{
+    display: none;
+}
+
+header main .right-site{
+    display: flex;
+    align-items: flex-end;
+    justify-items: flex-end;
+    width: 40%;
+    text-align: end;
+}
+
+header main .right-site img{
+    width: 70%;
+    left: 8rem;
+    top: 8rem;
+    position: relative;
+}
+
+.agency{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    margin-top: 4rem;
+}
+
+.agency .agency-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 40%;
+}
+
+.agency .agency-info h1{
+    font-size: 2rem;
+    font-weight: 400;
+    color: #400f59;
+}
+
+.agency .agency-info p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #676767;
+    width: 80%;
+    line-height: 1.9rem;
+    margin-top: 1rem;
+}
+
+.agency .agency-info a{
+    text-decoration: none;
+    color: white;
+    background-color: #ea5211;
+    padding: 1rem 2.5rem;
+    border-radius: 35px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    transition: .5s ease;
+}
+
+.agency .agency-info a:hover{
+    background-color: #86599d;
+}
+
+.agency .agency-info .hero-pic{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agency .agency-info .hero007{
+    width: 50%;
+    height: 25rem;
+}
+
+.agency .agency-info .hero008{
+    width: 50%;
+    height: 25rem;
+}
+
+.agency .agency-work{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.agency .agency-work .work{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding-top: 1rem;
+}
+
+.agency .agency-work .work .work-head{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.agency .agency-work .work .work-head .work-logo{
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.agency .agency-work .work .work-head .work-logo img{
+    width: 3rem;
+    height: auto;
+}
+
+.agency .agency-work .work .work-head h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #400f59;
+    text-transform: uppercase;
+    padding: 0 0.4rem;
+}
+
+.agency .agency-work .work .work-head h1 span{
+    color: #c43b00;
+}
+
+.agency .agency-work .work p{
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #676767;
+    line-height: 1.8rem;
+    width: 80%;
+    margin-top: 1rem;
+}
+
+.agency .agency-work .work p span{
+    color: black;
+    font-weight: 500;
+}
+
+.features{
+    background-color: #f9f8f8;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+.features .first-features{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.features .first-features .feature-1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 20rem;
+    text-align: end;
+}
+
+.features .first-features .feature-1 h1{
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #400f59;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.features .first-features .feature-1 p{
+    color: #676767;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2rem;
+    margin-top: 2rem;
+}
+
+.features .center-features{
+    width: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.features .last-features{
+    width: 300px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.features .last-features .feature-2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: 20rem;
+}
+
+.features .last-features .feature-2 h1{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #400f59;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.features .last-features .feature-2 p{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #676767;
+    line-height: 2rem;
+    margin-top: 2rem;
+}
+
+.features .center-features .circle{
+    background-color: rgb(242,238,242);
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: jeet 10s infinite linear;
+}
+
+.features .center-features .circle .circle-2{
+    width: 75%;
+    border-radius: 50%;
+    height: 75%;
+    background-color: rgb(222,216, 225);
+    animation: jeet-2 10s infinite linear;
+}
+
+.features .center-features .home{
+    margin-top: -30rem;
+}
+
+@keyframes jeet{
+    0%,100%{
+        background-color:rgb(242,238,242) ;
+    }
+    20%{
+        background-color: rgb(222,216, 225);
+    }
+    40%{
+        background-color: rgb(242,238,242);
+    }
+    60%{
+        background-color: rgb(222,216, 225);
+    }
+    80%{
+        background-color: rgb(242,238,242);
+    }
+}
+
+@keyframes jeet-2{
+    0%,100%{
+        background-color: rgb(222,216, 225);
+    }
+    20%{
+        background-color: rgb(242,238,242);
+    }
+    40%{
+        background-color: rgb(222,216, 225);
+    }
+    60%{
+        background-color: rgb(242,238,242);
+    }
+    80%{
+        background-color: rgb(222,216, 225);
+    }
+}
+
+.mission{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #272848;
+    background-image:linear-gradient(180deg, #272848, #5a3970);
+    padding: 3rem 0;
+    overflow: hidden;
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100px;
+}
+
+.mission .mission-info{
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 100;
+    padding-left: 4rem;
+}
+
+.mission .mission-info p{
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: white;
+    line-height: 2.4rem;
+}
+
+.mission .mission-info a{
+    text-decoration: none;
+    color: white;
+    background-color: #ea5211;
+    border-radius: 35px;
+    padding: 1.2rem 2rem;
+    transition: .5s ease;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+}
+
+.mission .mission-info a:hover{
+    background-color: #5a3970;
+}
+
+.mission .mission-pic{
+    width: 55%;
+}
+
+.mission .mission-pic img{
+    position: relative;
+}
+
+.mission .mission-pic .star{
+    width: 140%;
+    height: 25rem;
+    left: -25rem;
+    z-index: 10;
+}
+
+.mission .mission-pic .mission-photo{
+    width: 100%;
+    margin-top: -22rem;
+    z-index: 10;
+}
+
+.team{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.team .team-heading{
+    width: 100%;
+    text-align: center;
+}
+
+.team .team-heading h1{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #400f59;
+}
+
+.team .team-info{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.team .team-info .hero-card{
+    max-width: 333px;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.team .team-info .hero-card img{
+    width: 100%;
+    height: 390px;
+}
+
+.team .team-info .hero-card h1{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #400f59;
+    margin-top: 2rem;
+}
+
+.team .team-info .hero-card p{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #676767;
+    margin-top: 2rem;
+    line-height: 1.6rem;
+}
+
+.team .btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.team .btns img{
+    width: 3rem;
+    height: auto;
+    padding: 0 0.1rem;
+}
+
+.jeet{
+    width: 100%;
+    background-color: rgb(248,248, 248); 
+    margin-top: 2rem;   
+}
+
+.jeet .site{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.jeet .site .picture{
+    width: 50%;
+}
+
+.jeet .site .picture img{
+    width: 100%;
+    height: auto;
+}
+
+.jeet .site .infor{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.jeet .site .infor h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #c43b00;
+}
+
+.jeet .site .infor p{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #676767;
+    line-height: 2.4rem;
+    margin-top: 1rem;
+    width: 80%;
+}
+
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-top: -4.5rem;
+    z-index: 5;
+}
+
+.details a{
+    text-decoration: none;
+    color: white;
+    background-color: #400f59;
+    transition: .5s ease;
+    font-size: 1.2rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 10rem;
+    height: 4rem;
+    border-radius: 35px;
+}
+
+.details a:hover{
+    background-color: #47406d;
+}
+
+.train{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.train .train-pic{
+    width: 45%;
+    height: auto;
+}
+
+.train .train-pic img{
+    width: 100%;
+    height: auto;
+}
+
+.train .train-heading{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.train .train-heading h1{
+    font-size: 2rem;
+    font-weight: 500;
+    color: #400f59;
+}
+
+.train .train-heading p{
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #676767;
+    width: 80%;
+    margin-top: 1rem;
+    line-height: 2rem;
+}
+
+.jaat{
+    width: 100%;
+    height: 400px;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.jaat .jaat-slide{
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    background-color: #f9f8f8;
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    padding: 10px 10px;
+}
+
+.jaat .jaat-slide .jaat-pic{
+    width: 30%;
+}
+
+.jaat .jaat-slide .jaat-pic img{
+    width: 100%;
+    height: 400px;
+}
+
+.jaat .jaat-slide .jaat-info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;    
+    width: 50%;
+}
+
+.jaat .jaat-slide .jaat-info h1{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #400f59;
+    width: 70%;
+}
+
+.jaat .jaat-slide .jaat-info h1 span{
+    color: #c43b00;
+}
+
+.jaat .jaat-slide .jaat-info p{
+    font-size: 1rem;
+    font-weight: 500;
+    color: #656565;
+    margin-top: 0.8rem;
+    width: 70%;
+    line-height: 2rem;
+}
+
+.jaat .jaat-slide .jaat-info a{
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: #c43b00;
+    padding: 1rem 2rem;
+    border-radius: 35px;
+    transition: .5s ease;
+    margin-top: 0.5rem;
+}
+
+.jaat .jaat-slide .jaat-info a:hover{
+    background-color: #47406d;
+}
+
+.more{
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.more a{
+    text-decoration: none;
+    color: white;
+    background-color: #ea5211;
+    padding: 1rem 2rem;
+    border-radius: 35px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: .5s ease;
+    z-index: 100;
+}
+
+.more a:hover{
+    background-color: #5a3970;
+}
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 4rem;
+    background-image: linear-gradient(180deg, #142138, #714180);
+    background-image:-webkit-linear-gradient(top, #142138, #714180) ;
+    padding-top: 6rem;
+}
+
+footer .top-foot{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    z-index: 40;
+}
+
+footer .top-foot .left-foot{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+footer .top-foot .left-foot .foot-1{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+footer .top-foot .left-foot .foot-1 h1{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: #656565 solid 1px;
+}
+
+footer .top-foot .left-foot .foot-1 a{
+    text-decoration: none;
+    color: #656565;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 2rem;
+    padding-left: 1rem;
+    width: 100%;
+    transition: .5s;
+    border-left: #656565 solid 1px;
+}
+
+footer .top-foot .left-foot .foot-1 a:hover{
+    border-left: #f56024 solid 1px;
+    color: #f56024;
+}
+
+footer .top-foot .left-foot .foot-1 span a{
+    color: #f56024;
+    border-left: #f56024 solid 1px;
+    width: 100%;
+}
+
+footer .top-foot .left-foot .foot-2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+footer .top-foot .left-foot .foot-2 h1{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+    border-left: #656565 solid 1px;
+}
+
+footer  .top-foot .left-foot .foot-2 a{
+    text-decoration: none;
+    color: #656565;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    padding-left: 1rem;
+    width: 100%;
+    transition: .5s;
+    border-left: #656565 solid 1px;
+    padding-bottom: 0.4rem;
+}
+
+footer .top-foot .left-foot .foot-2 a:hover{
+    border-left: #f56024 solid 1px;
+    color: #f56024;
+}
+
+footer .top-foot .right-foot{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+}
+
+footer .top-foot .right-foot img{
+    width: 100%;
+}
+
+footer .top-foot .right-foot .contact{
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+footer .top-foot .right-foot .contact a{
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 3px;
+    color: rgba(255, 255, 255, 35%);
+    transition: .5s ease;
+}
+
+footer .top-foot .right-foot .contact a:hover{
+    color: rgba(255, 255, 255, 70%);
+}
+
+footer .last-foot{
+    margin-top: 8rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    background-image: url(../images/city-1.png);
+    height: 10rem;
+    max-height: 10rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 1rem 5rem;
+}
+
+footer .last-foot h4{
+    font-size: 1rem;
+    font-weight: 400;
+    color: white;
+}
+
+footer .last-foot h4 a{
+    text-decoration: none;
+    color: #f56024;
+    transition: .5s ease;
+}
+
+footer .last-foot h4 a:hover{
+    color: white;
+}
+
+footer .logo-1{
+    position: relative;
+    margin-top: -20rem;
+    left: 22rem;
+    z-index: 10;
+}
+
+footer .superman{
+    z-index: 11;
+    position: relative;
+    margin-top: -22rem;
+    left: 32rem;
+}
+
+footer .star-2{
+    position: relative;
+    z-index: 10;
+    margin-top: -15rem;
+    top: -25rem;
+}
+
+/* end */
+
+/* media qurries */
+
+@media(max-width:1450px){
+    footer .superman{
+        left: 24rem;
+    }
+    footer .logo-1{
+        left: 12rem;
+    }
+    header main  .left-site .robot{
+        margin-top: 3rem;
+    }
+    header main .right-site img{
+        width: 65%;
+        top: 4rem;   
+    }
+}
+
+@media(max-width:1350px){
+    .team .team-info{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        max-width: 800px;
+    }
+    .team .team-info .hero-card{
+        width: 50%;
+        height: auto;
+    }
+    .agency{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .agency .agency-info{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .agency .agency-info .hero-pic{
+       display: none;
+    }
+    .agency .agency-work{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        width: 100%;
+    }
+    .agency .agency-work .work{
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media(max-width:1200px){
+    header main .left-site{
+        padding-left: 10px;
+    }
+    header main .left-site .robot{
+        width: 14rem;
+        margin-top: 2rem;
+    }
+    .jeet .site .infor{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    .jeet .site .infor h1{
+        text-align: center;
+    }
+    .jeet .site .infor p{
+        line-height: 2rem;
+        font-size: 0.8rem;
+    }
+    .train .train-heading p{
+        font-size: 0.8rem;
+        line-height: 2rem;
+    }
+    footer .superman{
+        width: 30rem;
+        height: auto;
+        left: 20rem;
+    }
+}
+
+@media(max-width:1120px){
+    .more{
+        margin-top: 8rem;
+    }
+    footer .superman{
+        left: 16rem;
+    }
+    footer .logo-1{
+        left: 8rem;
+    }
+}
+
+@media(max-width:1000px){
+    header nav .top-btn .active{
+        display: none;
+    }
+    header nav .top-btn .noactive{
+        display: none;
+    }
+    #menuToggle{
+        display: block;
+        width: 10rem;
+    }
+    header nav .top-logo{
+        display: none;
+    }
+    header nav .top-btn{
+        width: 100%;
+        text-align: end;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
+    header nav .top-logo img{
+        width: 12rem;
+    }
+    .nav-1{
+        margin-top: -2rem;
+    }
+    header main .left-site .robot{
+        margin-top: 0;
+    }
+    header main .right-site img{
+       top: 0;
+    }
+    .agency{
+        margin-top: 0rem;
+    }
+    .features{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .features .first-features{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        height: auto;
+    }
+    .features .first-features .feature-1{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 40%;
+        text-align: center;
+        height: auto;
+    }
+    .features .last-features{
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }   
+    .features .last-features .feature-2{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: 49%;
+        text-align: center;
+        height: auto;
+    }
+    .features .center-features .home{
+        margin-top: -33rem;
+    }
+    .mission .mission-info p{
+        font-size: 0.7rem;
+        line-height: 1.6rem;
+    }
+    .mission .mission-info a{
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 1rem 2rem;
+    }
+    .mission .mission-pic .star{
+        height: 20rem;
+    }
+    .jeet .site .infor p{
+        line-height: 1.6rem;
+    }
+    .jeet .site{
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 4rem;
+    }
+    .jaat .jaat-slide .jaat-info{
+        width: 70%;
+    }
+    .jaat .jaat-slide .jaat-info p{
+        line-height: 1.6rem;
+        font-size: 0.7rem;
+    }
+    .jaat .jaat-slide .jaat-info h1{
+        font-size: 1.4rem;
+    }
+    .jaat .jaat-slide .jaat-pic img{
+        height: auto;
+    }
+    .jaat .jaat-slide .jaat-info a{
+        font-size: 0.8rem;
+        padding: 1rem 2rem;
+    }
+    footer .superman{
+        width: 20rem;
+        height: auto;
+        margin-top: -16.5rem;
+    }
+    footer .top-foot .left-foot{
+        width: 30rem;
+    }
+    footer .top-foot .right-foot{
+        width: 14rem;
+    }
+}
+
+@media(max-width:900px){
+    header main .right-site img{
+        left: 2rem;
+    }
+    header main .left-site .robot{
+        left: 12rem;
+    }
+}
+
+@media(max-width:840px){
+    header main .left-site p{
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+    }
+    header main .left-site h1{
+        margin-top: 0;
+    }
+    header main .right-site img{
+        margin-top: 13rem;
+    }
+    header main .left-site .robot{
+        margin-top: 4rem;
+    }
+    footer .superman{
+        left: 12rem;
+    }
+    .more{
+        margin-top: 2rem;
+    }
+    footer {
+        margin-top: 1rem;
+    }
+}
+
+@media(max-width:800px){
+    .train{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 0;
+    }
+    .train .train-heading{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+    }
+    .details{
+        display: none;
+    }
+    .jeet .site .infor h1{
+        font-size: 1.2rem;
+    }
+    .jaat .jaat-slide .jaat-pic img{
+        height: auto;
+    }
+}
+
+@media(max-width:700px){
+    footer .superman{
+        left: 8rem;
+    }
+    footer .top-foot{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    footer .top-foot .left-foot{
+        width: 100%;
+    }
+    footer .top-foot .right-foot{
+        width: 20rem;
+    }
+    .more{
+        margin-top: 0rem;
+    }
+    .jeet .site{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .jeet .site .picture{
+        width: 100%;
+    }
+    .jeet .site .infor{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 0;
+    }
+    .jeet{
+        padding: 0;
+    }
+    .mission .mission-info{
+        width: 60%;
+    }
+    .mission .mission-info a{
+        padding: 0.8rem 1rem;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    .features .first-features .feature-1 h1{
+        font-size: 0.9rem;
+    }
+    .features .first-features .feature-1 p{
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+    }
+    .features .last-features .feature-2 h1{
+        font-size: 0.9rem;
+    }
+    .features .last-features .feature-2 p{
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+    }
+    .agency .agency-work .work .work-head .work-logo img{
+        width: 2rem;
+    }
+    .agency .agency-work .work .work-head .work-logo{
+        padding: 1rem;
+    }
+    .agency .agency-work .work .work-head h1{
+        font-size: 1.2rem;
+    }
+    .agency .agency-work .work .work-head{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .agency .agency-work .work p{
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+        text-align: center;
+    }
+    .agency .agency-info h1{
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+    .agency .agency-info p{
+        font-size: 0.8rem;
+        line-height: 1.6rem;
+    }
+    .agency .agency-info a{
+        font-size: 0.8rem;
+        font-weight: 500;
+        padding: 0.8rem 1rem;
+    }
+}
+
+@media(max-width:600px){
+    footer .logo-1{
+        left: 4rem;
+    }
+    footer .superman{
+        left: 4rem;
+    }
+    footer .last-foot{
+        z-index: 100;
+    }
+    footer .last-foot h4{
+        font-size: 0.8rem;
+    }
+    .jaat .jaat-slide .jaat-info h1{
+        font-size: 1rem;
+    }
+    .jaat .jaat-slide .jaat-info p{
+        font-size: 0.6rem;
+        line-height: 1rem;
+    }
+    .jaat .jaat-slide .jaat-info a{
+        font-size: 0.7rem;
+        padding: 0.8rem 1rem;
+    }
+    .more{
+        margin-top: -4rem;
+    }
+    .team .team-heading h1{
+        font-size: 1.2rem;
+    }
+    .team .team-info .hero-card{
+        width: 50%;
+    }
+    .team .team-info .hero-card h1{
+        font-size: 1rem;
+        font-weight: 600;
+        margin-top: 1rem;
+    }
+    .team .team-info .hero-card p{
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        width: 90%;
+        margin-top: 1rem;
+    }
+    .team .team-info .hero-card img{
+        width: 100%;
+        height: auto;
+    }
+    .mission .mission-info{
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+    }
+    .mission .mission-info p{
+        width: 80%;
+    }
+    .mission .mission-pic{
+       display: none;
+    }
+    .features .first-features{
+        margin-bottom: -12rem;
+        z-index: 80;
+    }
+    .features .center-features{
+        z-index: 10;
+        margin-bottom: -8rem;
+        opacity: 0.7;
+        width: 100%;
+    }
+    .features .center-features .circle{
+        width: 100%;
+    }
+    .features .last-features{
+        z-index: 80;
+    }
+    .jeet .site{
+        margin-top: -6rem;
+    }
+    .train .train-heading p{
+        line-height: 1.5rem;
+        margin-top: 0.5rem;
+    }
+    header main .right-site img{
+        width: 100%;
+        left: 0;
+        margin: 0;
+    }
+    header main .left-site .robot{
+        left: 6rem;
+        margin-top: 1rem;
+    }
+}
+
+@media(max-width:526px){
+    header main .left-site h2{
+        font-size: 0.9rem;
+    }
+    header main .left-site h1{
+        font-size: 1.8rem;
+    }
+    header main .left-site p{
+        width: 90%;
+    }
+    header main .left-site .robot{
+        margin-top: 6rem;
+    }
+    header{
+        height: 110vh;
+    }
+}
+
+
+@media(max-width:430px){
+    footer .superman{
+        left: 0;
+    }
+    footer .logo-1{
+        left: 0;
+    }
+    footer .top-foot .left-foot .foot-1 h1{
+        font-size: 1rem;
+    }
+    footer .top-foot .left-foot .foot-2 h1{
+        font-size: 1rem;
+    }
+    footer .top-foot .left-foot .foot-1 a{
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    footer .top-foot .left-foot .foot-2 a{
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+    footer{
+        padding-top: 2rem;
+    }
+    footer .last-foot{
+        margin-top: 3rem;
+        text-align: center;
+    }
+    .jaat .jaat-slide .jaat-info p{
+        width: 100%;
+    }
+    .more{
+        margin-top: -8rem;
+    }
+    .train{
+        text-align: center;
+    }
+    .jeet .site .infor p{
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    .features .first-features{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .features .first-features .feature-1{
+        width: 100%;
+    }
+    .features .first-features .feature-1 p{
+        margin-top: 0.5rem;
+        font-weight: 600;
+        color: black;
+    }
+    .features .last-features .feature-2{
+        width: 100%;
+    } 
+    .features .last-features{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .features .last-features .feature-2 p{
+        margin-top: 0.5rem;
+        color: black;
+        font-weight: 600;
+    }
+    .features .center-features{
+        opacity: 0.5;
+    }
+    header{
+        background-image:url(../images/back-2.jpg);
+    }
+    header main .left-site{
+        width: 100%;
+    }
+    header main .right-site{
+        display: none;
+    }
+    header main .left-site .robot{
+        display: none;
+    }
+    header main .left-site{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    header main .left-site .small{
+        display: block;
+        width: 250px;
+    }
+    .agency .agency-work{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .agency .agency-work .work{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media(max-width:400px){
+    .more{
+        margin-top: 0rem;
+    }
+    .more a{
+        font-size: 0.6rem;
+        padding: 0.7rem 0.9rem;
+    }
+    .jaat .jaat-slide .jaat-info a{
+        font-size: 0.6rem;
+        padding: 0.6rem 0.8rem;
+    }
+    .jaat .jaat-slide{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .jaat .jaat-slide .jaat-pic{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .jaat .jaat-slide .jaat-pic img{
+        width: 200px;
+    }
+    .jaat .jaat-slide .jaat-info{
+        width: 100%;
+        text-align: center;
+    }
+    .jaat .jaat-slide .jaat-info p{
+        display: none;
+    }
+    .train .train-pic{
+        display: none;
+    }
+    .train {
+        margin-top: 1rem;
+    }
+    .agency{
+        margin-top: 2rem;
+    }
+    header nav .top-btn .login{
+        font-size: 0.8rem;
+        padding: 0.8rem 0.9rem;
+    }
+    .team .team-info{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .team .team-info .hero-card{
+        width: 100%;
+    }
+}
+
+
+@media only screen and (max-width:1024px){
+    header{
+        height: 60vh;
+    }
+}
+@media(max-width:320px){
+    header main .left-site .small{
+        width: 200px;
+    }
+    .agency{
+        margin-top: 4rem;
+    }
+}
+@media only screen and (max-width: 800px){
+    header{
+        height: 70vh;
+    }
+}
+
+@media only screen and (max-width:500px){
+    header{
+        height: 100vh;
+    }
+    header main{
+        margin-top: 0rem !important;
+    }
+}
+
+@media only screen and (max-width:350px){
+    header{
+        height: 80vh;
+    }
+}
+
+/* end */
